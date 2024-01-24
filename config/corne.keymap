@@ -34,7 +34,7 @@
                         bindings = <
    &kp GRAVE  &kp CARET  &kp PIPE   &kp LT    &kp GT   &kp FSLH          &kp MINUS  &kp LBRC  &kp RBRC   &kp AMPS   &kp DLLR      &kp BSPC
    &kp LSHFT  &kp HASH   &kp COLON  &kp LBKT  &kp RBKT &kp STAR          &kp PLUS   &kp LPAR  &kp RPAR   &kp EQUAL  &kp SEMI      &kp DEL
-   &kp LCTRL  &kp AT     &kp BSLH   &kp COMMA &kp APOS &kp EXCL          &kp QMARK  &kp SQT   &kp DOT    &kp UNDER  &kp PRCNT     &kp INS
+   &kp LCTRL  &kp AT     &kp BSLH   &kp COMMA &kp SQT  &kp EXCL          &kp QMARK  &kp DQT   &kp DOT    &kp UNDER  &kp PRCNT     &kp INS
                                     &kp LGUI  &trans   &kp SPACE         &kp RET    &mo 3     &kp RALT
                         >;
                 };
