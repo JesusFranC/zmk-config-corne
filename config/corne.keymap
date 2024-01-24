@@ -35,7 +35,7 @@
    &kp GRAVE  &kp CARET  &kp PIPE   &kp LT    &kp GT   &kp FSLH          &kp MINUS  &kp LBRC  &kp RBRC   &kp AMPS   &kp DLLR      &kp BSPC
    &kp LSHFT  &kp HASH   &kp COLON  &kp LBKT  &kp RBKT &kp STAR          &kp PLUS   &kp LPAR  &kp RPAR   &kp EQUAL  &kp SEMI      &kp DEL
    &kp LCTRL  &kp AT     &kp BSLH   &kp COMMA &kp APOS &kp EXCL          &kp QMARK  &kp SQT   &kp DOT    &kp UNDER  &kp PRCNT     &kp INS
-                                    &kp LGUI  &trans   &kp RET           &kp SPACE  &trans    &kp RALT
+                                    &kp LGUI  &trans   &kp SPACE         &kp RET    &mo 3     &kp RALT
                         >;
                 };
 
@@ -43,14 +43,27 @@
 // -----------------------------------------------------------------------------------------
 // |ALTTAB|     | UP   |     | PGUP | HOME |   |  ^  |  7  |  8  |  9  | BUP  | BTNEXT |
 // | SHFT | LFT | DWN  | RGHT| PGDN | END  |   |  +  |  4  |  5  |  6  | BDWN | BTPREV |
+// | MUTE | PRV | PP   | NEXT| VUP  | VDWN |   |  -  |  1  |  2  |  3  | SCRN |        |
+//                     | GUI |      | SPC  |   | ENT |     |  0  |
+                        bindings = <
+   &kp LA(TAB) &trans     &kp UP     &trans       &kp PG_UP    &kp HOME                  &kp CARET  &kp N7 &kp N8 &kp N9 &kp C_BRI_UP  &kp BSPC
+   &kp LSHFT   &kp LEFT   &kp DOWN   &kp RIGHT    &kp PG_DN    &kp END                   &kp PLUS   &kp N4 &kp N5 &kp N6 &kp C_BRI_DN  &bt BT_NXT
+   &kp C_MUTE  &kp C_PREV &kp C_PP   &kp C_NEXT   &kp C_VOL_UP &kp C_VOL_DN              &kp MINUS  &kp N1 &kp N2 &kp N3 &kp LG(PSCRN) &bt BT_PRV
+                                     &kp LGUI     &mo 3        &kp RET                   &bt BT_CLR &trans &kp NUMBER_0
+                        >;
+                };
+                
+                function_layer {
+// -----------------------------------------------------------------------------------------
+// | F1 | F2 | F3 | F4 | F5 | F6 |   | F7 | F8 | F9 | F10 | F11 | F12 | 
+// | SHFT | LFT | DWN  | RGHT| PGDN | END  |   |  +  |  4  |  5  |  6  | BDWN | BTPREV |
 // | PREV | PP  | NEXT | VUP | MUTE | VDWN |   |  -  |  1  |  2  |  3  | SCRN |        |
 //                     | GUI |      | SPC  |   | ENT |     |  0  |
                         bindings = <
-
-   &kp LA(TAB) &trans   &kp UP     &trans       &kp PG_UP   &kp HOME                  &kp CARET  &kp N7 &kp N8 &kp N9 &kp C_BRI_UP  &kp BSPC
-   &kp LSHFT   &kp LEFT &kp DOWN   &kp RIGHT    &kp PG_DN   &kp END                   &kp PLUS   &kp N4 &kp N5 &kp N6 &kp C_BRI_DN  &bt BT_NXT
-   &kp C_PREV  &kp C_PP &kp C_NEXT &kp C_VOL_UP &kp C_MUTE  &kp C_VOL_DN              &kp MINUS  &kp N1 &kp N2 &kp N3 &kp LG(PSCRN) &bt BT_PRV
-                                   &kp LGUI     &trans      &kp RET                   &bt BT_CLR  &trans &kp NUMBER_0
+   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6    &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6    &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6    &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+                        &kp F1 &kp F2 &kp F3    &kp F4 &kp F5 &kp F6
                         >;
                 };
         };
