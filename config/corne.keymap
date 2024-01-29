@@ -36,7 +36,7 @@
 
 &mwh {
   time-to-max-speed-ms = <1000>;                 /* <--- How long time until max speed is reached */
-  acceleration-exponent=<2>;
+  acceleration-exponent=<1>;
 };
 
 / {
