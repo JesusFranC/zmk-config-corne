@@ -75,14 +75,14 @@
 
                 raise_layer {
 // --------------------------------------------------------------------------------------
-// |ALTTAB|     | UP   | MB1 | MB2  | END  |   | MWUP | MB5 | MUP | MB2 | BUP  |  BKSP  |
-// | SHFT | LFT | DWN  | RGHT| PGUP | HOME |   | MBT1 | MLT | MDN | MRT | MB3  | BTNEXT |
-// | CTRL |  Z  |  X   |  C  | PGDN | CAPS |   | MWDN | MB4 | MWL | MWR | BDWN | BTPREV |
+// |ALTTAB|     | UP   | MB1 | MB2  | END  |   | MWUP | MB5 | MUP | MB2 | BUP  | BKSP |
+// | SHFT | LFT | DWN  | RGHT| PGUP | HOME |   | MBT1 | MLT | MDN | MRT | MB3  | NONE |
+// | CTRL |  Z  |  X   |  C  | PGDN | CAPS |   | MWDN | MB4 | MWL | MWR | BDWN | ESC  |
 //                     | GUI |      | ENTR |   | None |     | SCRN|
                         bindings = <
    &kp LA(TAB) &trans   &kp UP   &mkp MB1  &mkp MB2  &kp HOME           &mwh SCROLL_UP   &mkp MB5       &mmv MOVE_UP     &mkp MB2          &none     &kp BSPC
    &kp LSHFT   &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp END            &mkp MB1         &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &mkp MB3  &none
-   &kp LCTRL   &kp Z    &kp X    &kp C     &kp PG_DN &kp CAPS           &mwh SCROLL_DOWN &mkp MB4       &mwh SCROLL_LEFT &mwh SCROLL_RIGHT &none     &none
+   &kp LCTRL   &kp Z    &kp X    &kp C     &kp PG_DN &kp CAPS           &mwh SCROLL_DOWN &mkp MB4       &mwh SCROLL_LEFT &mwh SCROLL_RIGHT &none     &kp ESC
                                  &trans    &mo 3     &kp RET            &none            &trans         &kp LG(PSCRN)
                         >;
                 };
@@ -118,14 +118,14 @@
 
                 num_pad_layer {
 // ---------------------------------------------------------------------------------------------
-// | trans | trans | trans | trans | trans | trans |    |  -  |  7  |  8  |  9  | none | trans | 
+// | trans | trans | trans | trans | trans | trans |    |  -  |  7  |  8  |  9  |  =   | trans | 
 // | trans | trans | trans | trans | trans | trans |    |  +  |  4  |  5  |  6  |  /   | DLTE  |
-// | trans | trans | trans | trans | trans | trans |    |  $  |  1  |  2  |  3  | dot  | trans |
+// | trans | trans | trans | trans | trans | trans |    |  $  |  1  |  2  |  3  |  dot | trans |
 //                         | GUI   |       | ENT   |    | SPC |     |  0  |
                         bindings = <
-   &trans &kp 1  &kp 2  &kp 3  &trans &trans    &kp MINUS  &kp N7 &kp N8 &kp N9 &none    &kp BSPC
-   &trans &kp 4  &kp 5  &kp 6  &trans &trans    &kp PLUS   &kp N4 &kp N5 &kp N6 &kp FSLH &kp DEL
-   &trans &kp 7  &kp 8  &kp 9  &trans &trans    &kp DLLR   &kp N1 &kp N2 &kp N3 &kp DOT  &trans
+   &trans &kp 1  &kp 2  &kp 3  &trans &trans    &kp MINUS  &kp N7 &kp N8 &kp N9 &kp EQUAL &kp BSPC
+   &trans &kp 4  &kp 5  &kp 6  &trans &trans    &kp PLUS   &kp N4 &kp N5 &kp N6 &kp FSLH  &kp DEL
+   &trans &kp 7  &kp 8  &kp 9  &trans &trans    &kp DLLR   &kp N1 &kp N2 &kp N3 &kp DOT   &trans
                         &trans &trans &trans    &trans     &trans &kp NUMBER_0
                         >;
                 };
