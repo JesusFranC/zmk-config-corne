@@ -35,6 +35,8 @@
 #define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
 #define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
 
+#define NUMPAD 5
+
 &mwh {
   time-to-max-speed-ms = <1000>;                 /* <--- How long time until max speed is reached */
   acceleration-exponent=<1>;
@@ -51,10 +53,10 @@
 // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
                         bindings = <
-   &lt 4 TAB &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                   &kp LALT &mo 1 &kp RET    &kp SPACE &mo 2 &kp LGUI
+   &lt NUMPAD TAB &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp LSHFT &kp A &kp S &kp D &kp F &kp G         &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B         &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
+                   &kp LALT &mo 1 &kp RET          &kp SPACE &mo 2 &kp LGUI
                         >;
                 };
                 lower_layer {
@@ -67,7 +69,7 @@
    &kp GRAVE  &kp CARET  &kp PIPE   &kp LT    &kp GT   &kp FSLH          &kp MINUS  &kp LBRC  &kp RBRC   &kp AMPS   &kp DLLR      &kp BSPC
    &kp LSHFT  &kp HASH   &kp COLON  &kp LBKT  &kp RBKT &kp STAR          &kp PLUS   &kp LPAR  &kp RPAR   &kp EQUAL  &kp SEMI      &kp DEL
    &kp LCTRL  &kp AT     &kp BSLH   &kp COMMA &kp SQT  &kp EXCL          &kp QMARK  &kp DQT   &kp DOT    &kp UNDER  &kp PRCNT     &kp INS
-                                    &trans    &trans   &kp SPACE         &kp RET    &mo 3     &kp RALT
+                                    &trans    &trans   &kp SPACE         &kp RET    &trans    &kp RALT
                         >;
                 };
 
@@ -79,18 +81,33 @@
 //                     | GUI |      | ENTR |   | None |     | SCRN|
                         bindings = <
    &kp LA(TAB) &trans   &kp UP   &mkp MB1  &mkp MB2  &kp HOME           &mwh SCROLL_UP   &mkp MB5       &mmv MOVE_UP     &mkp MB2          &none     &kp BSPC
-   &kp LSHFT   &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp END            &mkp MB1         &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &mkp MB3  &bt BT_NXT
-   &kp LCTRL   &kp Z    &kp X    &kp C     &kp PG_DN &kp CAPS           &mwh SCROLL_DOWN &mkp MB4       &mwh SCROLL_LEFT &mwh SCROLL_RIGHT &none     &bt BT_PRV
-                                 &trans    &trans    &kp RET            &none            &trans         &kp LG(PSCRN)
+   &kp LSHFT   &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp END            &mkp MB1         &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &mkp MB3  &none
+   &kp LCTRL   &kp Z    &kp X    &kp C     &kp PG_DN &kp CAPS           &mwh SCROLL_DOWN &mkp MB4       &mwh SCROLL_LEFT &mwh SCROLL_RIGHT &none     &none
+                                 &trans    &mo 3     &kp RET            &none            &trans         &kp LG(PSCRN)
                         >;
                 };
 
+                gaming_layer {
+// --------------------------------------------------------------------------------
+// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+//                    | GUI | #pad| SPC |   | ENT | RSE  | ALT |
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T       &kp Y   &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp LSHFT &kp A &kp S &kp D &kp F &kp G       &kp H   &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B       &kp N   &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
+                 &kp LALT &mo NUMPAD &kp SPACE   &kp RET &mo 2  &kp LGUI
+                        >;
+                };
+
+
                 function_layer {
 // -------------------------------------------------------------------------------------
-// | F1 | F2 | F3 | F4 | F5 | F6 |             | F7  | F8  | F9  | F10 | F11  | F12    | 
-// | SHFT | LFT | DWN  | RGHT| PGDN | END  |   |  +  | VUP | VDN | MUTE| SCRN | BTPREV |
-// | PREV | PP  | NEXT | VUP | MUTE | VDWN |   |  -  | PRV | CPP | NXT |      |        |
-//                     | GUI |      | SPC  |   | ENT |     |  0  |
+// |  F1  | F2  |  F3  |  F4  |  F5  |  F6  |   | F7  | F8  | F9  | F10 | F11  | F12    | 
+// | SHFT | LFT | DWN  | RGHT | PGDN | END  |   |  +  | VUP | VDN | MUTE| SCRN | BTPREV |
+// | PREV | PP  | NEXT | VUP  | MUTE | VDWN |   |  -  | PRV | CPP | NXT |      |        |
+//                     | GUI  |      | SPC  |   | ENT |     |  0  |
                         bindings = <
    &out OUT_TOG &kp F2        &kp F3        &kp F4        &kp F5        &kp F6              &kp F7     &kp F8       &kp F9       &kp F10    &kp F11       &kp F12
    &out OUT_BLE &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4        &bt BT_NXT &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE &kp LG(PSCRN) &kp C_BRI_UP
@@ -106,9 +123,9 @@
 // | trans | trans | trans | trans | trans | trans |    |  $  |  1  |  2  |  3  | dot  | trans |
 //                         | GUI   |       | ENT   |    | SPC |     |  0  |
                         bindings = <
-   &trans &trans &trans &trans &trans &trans    &kp MINUS  &kp N7 &kp N8 &kp N9 &none    &kp BSPC
-   &trans &trans &trans &trans &trans &trans    &kp PLUS   &kp N4 &kp N5 &kp N6 &kp FSLH &kp DEL
-   &trans &trans &trans &trans &trans &trans    &kp DLLR   &kp N1 &kp N2 &kp N3 &kp DOT  &trans
+   &trans &kp 1  &kp 2  &kp 3  &trans &trans    &kp MINUS  &kp N7 &kp N8 &kp N9 &none    &kp BSPC
+   &trans &kp 4  &kp 5  &kp 6  &trans &trans    &kp PLUS   &kp N4 &kp N5 &kp N6 &kp FSLH &kp DEL
+   &trans &kp 7  &kp 8  &kp 9  &trans &trans    &kp DLLR   &kp N1 &kp N2 &kp N3 &kp DOT  &trans
                         &trans &trans &trans    &trans     &trans &kp NUMBER_0
                         >;
                 };
