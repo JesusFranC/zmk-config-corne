@@ -128,9 +128,9 @@
 // | trans | trans | trans | trans | trans | trans |    |  $  |  1  |  2  |  3  |  dot | trans |
 //                         | GUI   |       | ENT   |    | SPC |     |  0  |
                         bindings = <
-   &trans &kp 1  &kp 2  &kp 3  &trans &trans    &kp MINUS  &kp N7 &kp N8 &kp N9 &kp EQUAL &kp BSPC
-   &trans &kp 4  &kp 5  &kp 6  &trans &trans    &kp PLUS   &kp N4 &kp N5 &kp N6 &kp FSLH  &kp DEL
-   &trans &kp 7  &kp 8  &kp 9  &trans &trans    &kp DLLR   &kp N1 &kp N2 &kp N3 &kp DOT   &trans
+   &trans &kp N1  &kp N2  &kp N3  &trans &trans    &kp MINUS  &kp N7 &kp N8 &kp N9 &kp EQUAL &kp BSPC
+   &trans &kp N4  &kp N5  &kp N6  &trans &trans    &kp PLUS   &kp N4 &kp N5 &kp N6 &kp FSLH  &kp DEL
+   &trans &kp N7  &kp N8  &kp N9  &trans &trans    &kp DLLR   &kp N1 &kp N2 &kp N3 &kp DOT   &trans
                         &trans &trans &trans    &trans     &trans &kp NUMBER_0
                         >;
                 };
