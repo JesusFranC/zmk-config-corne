@@ -56,9 +56,7 @@
                 bindings = <&kp LALT>,<&sl NUMP>;
             };
         };
-};
 
-/ {
         keymap {
                 compatible = "zmk,keymap";
 
