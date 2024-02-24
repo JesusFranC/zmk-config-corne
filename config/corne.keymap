@@ -37,8 +37,8 @@
 
 #define WORD 0
 #define LOWR 1
-#define RAIS 2
-#define GAME 3
+#define RAIS 3
+#define GAME 2
 #define FUNC 4
 #define NUMP 5
 
@@ -78,17 +78,6 @@
                         >;
                 };
 
-                raise_layer {
-// --------------------------------------------------------------------------------------
-// |ALTTAB|     | UP   | MB1 | MB2  | END  |   | MWUP | MB5 | MUP | MB2 | BUP  | BKSP |
-// | SHFT | LFT | DWN  | RGHT| PGUP | HOME |   | MBT1 | MLT | MDN | MRT | MB3  | NONE |
-// | CTRL |  Z  |  X   |  C  | PGDN | CAPS |   | MWDN | MB4 | MWL | MWR | BDWN | ESC  |
-//                     | GUI |      | ENTR |   | None |     | SCRN|
-                        bindings = <
-   &kp LA(TAB) &trans   &kp UP   &mkp MB1  &mkp MB2  &kp HOME           &mwh SCROLL_UP   &mkp MB5       &mmv MOVE_UP     &mkp MB2          &none     &kp BSPC
-   &kp LSHFT   &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp END            &mkp MB1         &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &mkp MB3  &none
-   &kp LCTRL   &kp Z    &kp X    &kp C     &kp PG_DN &kp CAPS           &mwh SCROLL_DOWN &mkp MB4       &mwh SCROLL_LEFT &mwh SCROLL_RIGHT &none     &kp ESC
-                                 &trans    &mo FUNC  &kp RET            &none            &trans         &kp LG(PSCRN)
                         >;
                 };
 
@@ -102,10 +91,21 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T       &kp Y   &kp U    &kp I     &kp O   &kp P    &kp BSPC
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G       &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp SQT
    &kp LCTRL &kp Z &kp X &kp C &kp V &kp B       &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp ESC
-                   &kp LALT &mo NUMP &kp SPACE   &kp RET &mo RAIS &kp LGUI
+                   &kp LALT &mo NUMP &kp SPACE   &kp RET &mo RAIS &tog GAME
                         >;
                 };
 
+                raise_layer {
+// --------------------------------------------------------------------------------------
+// |ALTTAB|     | UP   | MB1 | MB2  | END  |   | MWUP | MB5 | MUP | MB2 | BUP  | BKSP |
+// | SHFT | LFT | DWN  | RGHT| PGUP | HOME |   | MBT1 | MLT | MDN | MRT | MB3  | NONE |
+// | CTRL |  Z  |  X   |  C  | PGDN | CAPS |   | MWDN | MB4 | MWL | MWR | BDWN | ESC  |
+//                     | GUI |      | ENTR |   | None |     | SCRN|
+                        bindings = <
+   &kp LA(TAB) &trans   &kp UP   &mkp MB1  &mkp MB2  &kp HOME           &mwh SCROLL_UP   &mkp MB5       &mmv MOVE_UP     &mkp MB2          &none     &kp BSPC
+   &kp LSHFT   &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp END            &mkp MB1         &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &mkp MB3  &none
+   &kp LCTRL   &kp Z    &kp X    &kp C     &kp PG_DN &kp CAPS           &mwh SCROLL_DOWN &mkp MB4       &mwh SCROLL_LEFT &mwh SCROLL_RIGHT &none     &kp ESC
+                                 &trans    &mo FUNC  &kp RET            &none            &trans         &kp LG(PSCRN)
 
                 function_layer {
 // -------------------------------------------------------------------------------------
