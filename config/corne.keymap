@@ -37,10 +37,11 @@
 
 #define WORD 0
 #define LOWR 1
-#define RAIS 3
 #define GAME 2
-#define FUNC 4
-#define NUMP 5
+#define RAIS 3
+#define RARR 4
+#define FUNC 5
+#define NUMP 6
 
 &mwh {
   time-to-max-speed-ms = <1000>;                 /* <--- How long time until max speed is reached */
@@ -55,6 +56,20 @@
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
                 bindings = <&kp LALT>,<&sl NUMP>;
+            };
+            td1: tap_dance_1{
+                compatible="zmk,behavior-tap_dance";
+                label= "tap_dance_1";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
+                bindings = <&trans>,<&mo RARR>
+            };
+            td2: tap_dance_2{
+                compatible="zmk,behavior-tap_dance";
+                label= "tap_dance_2";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
+                bindings = <&LGUI>,<&mo RARR>
             };
         };
 
@@ -71,7 +86,7 @@
    &lt NUMP TAB &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G         &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LCTRL &kp Z &kp X &kp C &kp V &kp B         &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                   &kp LALT &mo LOWR &kp RET          &kp SPACE &mo RAIS &kp LGUI
+                   &kp LALT &mo LOWR &kp RET          &kp SPACE &mo RAIS &td1
                         >;
                 };
                 lower_layer {
@@ -98,7 +113,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T       &kp Y   &kp U    &kp I     &kp O   &kp P    &kp BSPC
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G       &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp SQT
    &kp LCTRL &kp Z &kp X &kp C &kp V &kp B       &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp ESC
-                         &td0 &kp SPACE &mo NUMP &kp RET &mo RAIS &tog GAME
+                         &td0 &kp SPACE &mo NUMP &kp RET &mo RAIS &td2
                         >;
                 };
 
@@ -112,10 +127,24 @@
    &kp LA(TAB) &trans   &kp UP   &mkp MB1  &mkp MB2  &kp HOME           &mwh SCROLL_UP   &mkp MB5       &mmv MOVE_UP     &mkp MB2          &none     &kp BSPC
    &kp LSHFT   &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp END            &mkp MB1         &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &mkp MB3  &none
    &kp LCTRL   &kp Z    &kp X    &kp C     &kp PG_DN &kp CAPS           &mwh SCROLL_DOWN &mkp MB4       &mwh SCROLL_LEFT &mwh SCROLL_RIGHT &none     &kp ESC
-                                 &trans    &mo FUNC  &kp RET            &none            &trans         &kp LG(PSCRN)
+                                 &trans    &mo FUNC  &kp RET            &none            &trans         &kp PSCRN
                        >;
                 };
                 
+                right_arrows {
+// --------------------------------------------------------------------------------------
+// |ALTTAB|     | UP   | MB1 | MB2  | END  |   | MWUP | MB5 | MUP | MB2 | BUP  | BKSP |
+// | SHFT | LFT | DWN  | RGHT| PGUP | HOME |   | MBT1 | MLT | MDN | MRT | MB3  | NONE |
+// | CTRL |  Z  |  X   |  C  | PGDN | CAPS |   | MWDN | MB4 | MWL | MWR | BDWN | ESC  |
+//                     | GUI |      | ENTR |   | None |     | SCRN|
+                        bindings = <
+   &trans &trans &trans &trans &trans &trans           &trans &trans   &kp PG_UP &kp UP   &trans    &trans
+   &trans &trans &trans &trans &trans &trans           &trans &kp HOME &kp LEFT  &kp DOWN &kp RIGHT &kp END
+   &trans &trans &trans &trans &trans &trans           &trans &trans   &kp PG_DN &trans   &trans    &trans
+                        &trans &mo FUNC &kp RET        &none  &trans   &trans
+                       >;
+                };
+
                 function_layer {
 // -------------------------------------------------------------------------------------
 // |  F1  | F2  |  F3  |  F4  |  F5  |  F6  |   | F7  | F8  | F9  | F10 | F11  | F12    | 
