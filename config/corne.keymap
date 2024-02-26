@@ -62,7 +62,7 @@
                 label= "TAP_DANCE_1";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&kp LGUI>,<&mo RARR>;
+                bindings = <&mo RARR>,<&kp LGUI>;
             };
         };
 
@@ -126,10 +126,10 @@
                 
                 right_arrows {
 // --------------------------------------------------------------------------------------
-// |ALTTAB|     | UP   | MB1 | MB2  | END  |   | MWUP | MB5 | MUP | MB2 | BUP  | BKSP |
-// | SHFT | LFT | DWN  | RGHT| PGUP | HOME |   | MBT1 | MLT | MDN | MRT | MB3  | NONE |
-// | CTRL |  Z  |  X   |  C  | PGDN | CAPS |   | MWDN | MB4 | MWL | MWR | BDWN | ESC  |
-//                     | GUI |      | ENTR |   | None |     | SCRN|
+// |ALTTAB|     | UP   | MB1 | MB2  | END  |   | tran | tran | PGUP |  UP  | tran | tran |
+// | SHFT | LFT | DWN  | RGHT| PGUP | HOME |   | tran | Home | LEFT | DOWN | RGHT | END  |
+// | CTRL |  Z  |  X   |  C  | PGDN | CAPS |   | tran | tran | PGDN | tran | tran | tran |
+//                     | GUI |      | ENTR |   | tran | tran | tran |
                         bindings = <
    &trans &trans &trans &trans &trans &trans           &trans &trans   &kp PG_UP &kp UP   &trans    &trans
    &trans &trans &trans &trans &trans &trans           &trans &kp HOME &kp LEFT  &kp DOWN &kp RIGHT &kp END
