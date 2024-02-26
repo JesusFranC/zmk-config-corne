@@ -60,7 +60,7 @@
             td1: tap_dance_1{
                 compatible="zmk,behavior-tap_dance";
                 label= "tap_dance_1";
-                #binding-cells = <0>;
+                #binding-cells = <1>;
                 tapping-term-ms = <200>;
                 bindings = <&kp LGUI>,<&mo RARR>;
             };
