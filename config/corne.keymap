@@ -62,14 +62,14 @@
                 label= "tap_dance_1";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&trans>,<&mo RARR>
+                bindings = <&trans>,<&mo RARR>;
             };
             td2: tap_dance_2{
                 compatible="zmk,behavior-tap_dance";
                 label= "tap_dance_2";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&LGUI>,<&mo RARR>
+                bindings = <&LGUI>,<&mo RARR>;
             };
         };
 
