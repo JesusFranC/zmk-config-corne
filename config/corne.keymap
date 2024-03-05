@@ -112,13 +112,13 @@
 
                 raise_layer {
 // --------------------------------------------------------------------------------------
-// |ALTTAB|     | UP   | MB1 | MB2  | END  |   | MWUP | MB5 | MUP | MB2 | BUP  | BKSP |
-// | SHFT | LFT | DWN  | RGHT| PGUP | HOME |   | MBT1 | MLT | MDN | MRT | MB3  | NONE |
+// |ALTTAB|     | UP   | MB1 | MB2  | PGUP |   | MWUP | MB5 | MUP | MB2 | BUP  | BKSP |
+// | SHFT | LFT | DWN  | RGHT| HOME | END  |   | MBT1 | MLT | MDN | MRT | MB3  | NONE |
 // | CTRL |  Z  |  X   |  C  | PGDN | CAPS |   | MWDN | MB4 | MWL | MWR | BDWN | ESC  |
 //                     | GUI |      | ENTR |   | None |     | SCRN|
                         bindings = <
-   &kp LA(TAB) &trans   &kp UP   &mkp MB1  &mkp MB2  &kp HOME           &mwh SCROLL_UP   &mkp MB5       &mmv MOVE_UP     &mkp MB2          &none     &kp BSPC
-   &kp LSHFT   &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp END            &mkp MB1         &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &mkp MB3  &none
+   &kp LA(TAB) &trans   &kp UP   &mkp MB1  &mkp MB2  &kp PG_UP          &mwh SCROLL_UP   &mkp MB5       &mmv MOVE_UP     &mkp MB2          &none     &kp BSPC
+   &kp LSHFT   &kp LEFT &kp DOWN &kp RIGHT &kp HOME  &kp END            &mkp MB1         &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &mkp MB3  &none
    &kp LCTRL   &kp Z    &kp X    &kp C     &kp PG_DN &kp CAPS           &mwh SCROLL_DOWN &mkp MB4       &mwh SCROLL_LEFT &mwh SCROLL_RIGHT &none     &kp ESC
                                  &trans    &mo FUNC  &kp RET            &none            &trans         &kp PSCRN
                        >;
